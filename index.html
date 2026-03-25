@@ -1345,7 +1345,7 @@ body.light #cursor-ring { border-color: rgba(0,152,160,0.4); }
       </div>
       <div class="timeline-item reveal reveal-delay-1">
         <div class="timeline-dot"></div>
-        <div class="timeline-date">2021 — 2022</div>
+        <div class="timeline-date">2024 — 2025</div>
         <div class="timeline-role">Développeur Web Junior</div>
         <div class="timeline-company">Agence Digitale · Dakar, Sénégal</div>
         <p class="timeline-desc">Développement d'interfaces React et d'APIs Node.js pour des clients variés. Apprentissage des bonnes pratiques, du versionning Git et du déploiement cloud.</p>
@@ -1358,7 +1358,7 @@ body.light #cursor-ring { border-color: rgba(0,152,160,0.4); }
       </div>
       <div class="timeline-item reveal reveal-delay-2">
         <div class="timeline-dot"></div>
-        <div class="timeline-date">2020 — 2021</div>
+        <div class="timeline-date">2023 — 2024</div>
         <div class="timeline-role">Formation Développement Web</div>
         <div class="timeline-company">Auto-formation intensive · Bambey</div>
         <p class="timeline-desc">Formation intensive en développement web fullstack : HTML/CSS, JavaScript, React, Node.js. Réalisation de projets personnels pour consolider les acquis.</p>
@@ -1371,9 +1371,9 @@ body.light #cursor-ring { border-color: rgba(0,152,160,0.4); }
       </div>
       <div class="timeline-item reveal reveal-delay-3">
         <div class="timeline-dot" style="border-color:var(--violet);"></div>
-        <div class="timeline-date">2017 — 2020</div>
+        <div class="timeline-date">2022 — 2023</div>
         <div class="timeline-role">Licence en Informatique</div>
-        <div class="timeline-company">Université de Bambey · UGB</div>
+        <div class="timeline-company">Université Assane Seck de Ziguinshor · UASZ</div>
         <p class="timeline-desc">Formation en informatique générale avec spécialisation en développement logiciel, algorithmique et bases de données. Passion pour le développement web naissante dès la première année.</p>
         <div class="timeline-skills">
           <span class="timeline-skill">Algorithmes</span>
@@ -1384,8 +1384,8 @@ body.light #cursor-ring { border-color: rgba(0,152,160,0.4); }
     </div>
   </div>
 </section>
-
-<!-- ============================================================
+        
+    <!-- ============================================================
      CONTACT
 ============================================================ -->
 <section id="contact">
@@ -1407,7 +1407,7 @@ body.light #cursor-ring { border-color: rgba(0,152,160,0.4); }
             </div>
             <span class="social-arrow">→</span>
           </a>
-          <a href="https://github.com/IBRA-FALL" target="_blank" class="social-link">
+          <a href="#" class="social-link">
             <div class="social-icon">🐙</div>
             <div class="social-info">
               <div class="social-name">GitHub</div>
@@ -1423,41 +1423,44 @@ body.light #cursor-ring { border-color: rgba(0,152,160,0.4); }
             </div>
             <span class="social-arrow">→</span>
           </a>
-          <a href="mailto:contact@ibra-fall.dev" class="social-link">
+          <a href="mailto:fibra5276@gmail.com" class="social-link">
             <div class="social-icon">✉️</div>
             <div class="social-info">
               <div class="social-name">Email</div>
-              <div class="social-handle">contact@ibra-fall.dev</div>
+              <div class="social-handle">fibra5276@gmail.com</div>
             </div>
             <span class="social-arrow">→</span>
           </a>
         </div>
       </div>
       <div class="reveal-right">
-        <form class="contact-form" id="contactForm">
+        <!-- Formulaire avec Formspree - votre ID est déjà mis -->
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xpqozpgo" method="POST">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">Prénom</label>
-              <input type="text" class="form-input" placeholder="Jean">
+              <input type="text" name="prenom" class="form-input" placeholder="Jean" required>
             </div>
             <div class="form-group">
               <label class="form-label">Nom</label>
-              <input type="text" class="form-input" placeholder="Dupont">
+              <input type="text" name="nom" class="form-input" placeholder="Dupont" required>
             </div>
           </div>
           <div class="form-group">
             <label class="form-label">Email</label>
-            <input type="email" class="form-input" placeholder="jean@exemple.com">
+            <input type="email" name="email" class="form-input" placeholder="fibra5276@gmail.com" required>
           </div>
           <div class="form-group">
             <label class="form-label">Sujet</label>
-            <input type="text" class="form-input" placeholder="Mission freelance / Collaboration...">
+            <input type="text" name="sujet" class="form-input" placeholder="Mission freelance / Collaboration...">
           </div>
           <div class="form-group">
             <label class="form-label">Message</label>
-            <textarea class="form-textarea" placeholder="Décrivez votre projet, vos besoins..."></textarea>
+            <textarea name="message" class="form-textarea" placeholder="Décrivez votre projet, vos besoins..." required></textarea>
           </div>
-          <button type="button" class="btn-submit" onclick="handleSubmit()">
+          <!-- Champ caché pour que l'email arrive avec un beau sujet -->
+          <input type="hidden" name="_subject" value="📬 Nouveau message depuis le portfolio Ibra Fall">
+          <button type="submit" class="btn-submit">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8L7 13L14 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Envoyer le message
           </button>
@@ -1634,17 +1637,58 @@ themeToggle.addEventListener('click', () => {
   themeToggle.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
 });
 
-/* ── FORM SUBMIT ── */
-function handleSubmit() {
-  const btn = document.querySelector('.btn-submit');
-  btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8L7 13L14 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Message envoyé !`;
-  btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
-  btn.style.color = '#fff';
-  setTimeout(() => {
-    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8L7 13L14 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Envoyer le message`;
-    btn.style.background = '';
-    btn.style.color = '';
-  }, 3000);
+/* ── FORMULAIRE DE CONTACT AVEC FORMSPREE ── */
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const btn = document.querySelector('.btn-submit');
+    const originalContent = btn.innerHTML;
+    
+    // Désactiver le bouton et afficher chargement
+    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 4v4l2 2" stroke="currentColor" stroke-width="1.5"/></svg> Envoi en cours...`;
+    btn.disabled = true;
+    
+    try {
+      const formData = new FormData(contactForm);
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        // Succès
+        btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8L7 13L14 4" stroke="currentColor" stroke-width="1.5"/></svg> ✅ Message envoyé !`;
+        btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+        contactForm.reset(); // Efface le formulaire
+        
+        setTimeout(() => {
+          btn.innerHTML = originalContent;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 3000);
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Erreur d\'envoi');
+      }
+    } catch (error) {
+      // Erreur
+      btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8L7 13L14 4" stroke="currentColor" stroke-width="1.5"/></svg> ❌ Erreur, réessayez`;
+      btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+      
+      setTimeout(() => {
+        btn.innerHTML = originalContent;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3000);
+      
+      console.error('Erreur:', error);
+    }
+  });
 }
 
 /* ── SMOOTH ACTIVE NAV ── */
